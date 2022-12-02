@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pytest = "*"
+slampt-3 = {editable = true, path = "."}
+black = "*"
+openai = "*"
+pronouncing = "*"
+
+[dev-packages]
+pytest-reportlog = "*"
+
+[requires]
+python_version = "3.9"

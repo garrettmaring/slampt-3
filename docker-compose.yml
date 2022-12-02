@@ -1,0 +1,20 @@
+version: "3.9"
+
+x-service:
+  &service
+  build:
+    context: .
+  volumes:
+    - type: bind
+      source: .
+      target: /code
+
+services:
+  format:
+    command: black src/
+    <<: *service
+  tests:
+    command: pytest --report-log pytest.json
+    <<: *service
+    depends_on:
+      - format

@@ -1,0 +1,12 @@
+.env
+
+.vscode
+
+dist
+__pycache__/
+*.py[cod]
+*.egg-info
+.DS_Store
+build
+
+pytest.json
