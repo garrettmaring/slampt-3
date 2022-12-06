@@ -46,7 +46,7 @@ def test_aabb():
         for previous_line, line in zip(cleaned_poem_lines[::2], cleaned_poem_lines[1::2]):
             line_rhyming_word = line.split()[-1]
             previous_line_rhyming_word = previous_line.split()[-1]
-            assert previous_line_rhyming_word in pronouncing.rhymes(line_rhyming_word)
+            assert (previous_line_rhyming_word in pronouncing.rhymes(line_rhyming_word) or line_rhyming_word in pronouncing.rhymes(previous_line_rhyming_word))
 
 @pytest.mark.skip(reason="Implement ABAB check.")
 def test_abab():
